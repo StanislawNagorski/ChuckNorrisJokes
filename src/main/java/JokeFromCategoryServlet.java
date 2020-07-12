@@ -17,12 +17,15 @@ public class JokeFromCategoryServlet extends HttpServlet {
 
         PrintWriter writer = response.getWriter();
         String pathInfo = request.getPathInfo();
-        String jokeCategory = pathInfo.trim().substring(2);
+        String jokeCategory = pathInfo.trim().substring(1);
         String categoryFormat = "<h2>Dowcip z kategorii: %s </h2>";
 
         writer.printf(categoryFormat,jokeCategory);
         try {
-            writer.println(JokeGetter.getJoke(jokeCategory));
+            for (int i = 0; i < 10; i++) {
+
+                writer.println(JokeGetter.getJoke(jokeCategory));
+            }
         } catch (ParseException e) {
             e.printStackTrace();
         }

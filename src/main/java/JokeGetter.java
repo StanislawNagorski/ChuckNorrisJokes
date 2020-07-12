@@ -65,12 +65,10 @@ public class JokeGetter {
         String categoriesTotalString = scanner.nextLine();
         String[] categoriesArray = categoriesTotalString.split("\\W");
         for (String categoryString : categoriesArray) {
-            if (!categoryString.isBlank()){
+            if (!categoryString.isBlank()) {
                 categories.add(categoryString.trim());
             }
         }
         return categories;
     }
-
-
 }
